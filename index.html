@@ -12,7 +12,7 @@
 
 <input type="text" id="input1">
 <input type="text" id="input2">
-<button id="myButton">click me</button>
+<button id="myButton" onclick="bott()">click me</button>
 
     <script>
     
@@ -32,9 +32,9 @@ let value1 = (document.getElementById('input1'));
 let value2 = (document.getElementById('input2'));
 let btn = document.getElementById('myButton');
 
-      btn.addEventListener('click', function(){
+     function bott(){
     console.log (Number(value1.value) + Number(value2.value));
-      });
+      };
     </script>
 
 
@@ -43,7 +43,44 @@ let btn = document.getElementById('myButton');
 
 <p id="demo"></p>
 
+<!-- ARRAY -->
+<h1>List of car Models</h1>
+<p id="display"></p>
+
+<input type="text" id="car">
+<button onclick="pop()">pop</button>
+<button onclick="shift()">shift</button>
+<button onclick="unshift()">unshift</button>
+<button onclick="push()">push</button>
+
 <script>
+  let display = document.getElementById('display');
+  let cars = ['Lexus', 'Benz', 'Mazda', 'Toyota'];
+  display.innerHTML = cars
+
+function pop(){
+  cars.pop();
+  display.innerHTML = cars
+}
+function shift(){
+  cars.shift();
+  display.innerHTML = cars
+}
+
+function unshift(){
+  let input = document.getElementById('car');
+  cars.unshift(input.value);
+  display.innerHTML = cars
+}
+
+function push(){
+  let input2 = document.getElementById('car');
+  cars.push(input2.value);
+  display.innerHTML = cars
+}
+
+
+
 document.getElementById("demo").innerHTML = 5 + 6;
 </script>
 
