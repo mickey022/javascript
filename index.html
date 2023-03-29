@@ -53,7 +53,18 @@ let btn = document.getElementById('myButton');
 <button onclick="unshift()">unshift</button>
 <button onclick="push()">push</button>
 
+<br>
+<p id="time">clock</p>
+<button onmouseout="tiktik()">click me</button>
+
 <script>
+ 
+ 
+ function tiktik(){
+  
+  document.getElementById('time').innerHTML = Date()
+ }
+
   let display = document.getElementById('display');
   let cars = ['Lexus', 'Benz', 'Mazda', 'Toyota'];
   display.innerHTML = cars
