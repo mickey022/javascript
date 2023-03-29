@@ -57,8 +57,47 @@ let btn = document.getElementById('myButton');
 <p id="time">clock</p>
 <button onmouseout="tiktik()">click me</button>
 
+
+<h1 id="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, omnis!</h1>
+<h1 id="another">Another h1 element</h1>
+<button onclick="showLorem()">show lorem</button>
+<button id="nother" onclick="showAnother()">Show another</button>
+
+<br>
+<p id="map"></p>
+<br>
+<p id="wap"></p>
+<input type="text" id="search" placeholder="search engine">
+<button onclick="clickme()">click</button>
+
 <script>
+  let orlan = ["bolu", "kunle", "mayowa", "mike", "eunice", "lenma",
+   "koyode", "koyode", "eunice", "mayowa", "koyode", "koyode",];
+  // console.log(orlan)
+  orlan.forEach(function(anything){
+    document.getElementById("map").innerHTML += "<h1>" + anything + "</h1>" 
+});
+orlan.map(function(king){
+  document.getElementById("map").innerHTML  += king
+});
+
+let People = orlan.filter((pipul) => pupil == "bolu");
+
+console.log(People);
  
+let people = ["bolu", "kunle", "mayowa", "mike", "eunice", "lenma",
+   "koyode", "boyode", "eunice", "mayowa", "boyode", "boyode",]
+   console.log(people);
+function clickme(){
+  let search = document.getElementById("search");
+  let open = document.getElementById("wap")
+  search.value = open.innerHTML
+  open.innerHTML = people.find((look)=> look == "boyode");
+
+}
+
+
+
  
  function tiktik(){
   
