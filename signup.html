@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.add{
+    background-color: blue;
+    color: white;
+}
+
+.grand{
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
+    background-color: aliceblue;
+    margin: auto;
+    
+}
+    </style>
+</head>
+<body>
+    <h1 id="lorem">Lorem ipsum dolor sit</h1>
+    <h1 id="another">Another in element</h1>
+    <button onclick="showLorem()">showLorem</button>
+    <button id="nother" onclick="showAnother()">show another</button>
+
+<div class="grand">
+    <button onclick="sign()">sign up</button>
+     <button onclick="log()">log in</button>
+    <div id="parent">
+        
+        <input type="text" placeholder="Name">
+        <br>
+        <input type="text" placeholder="Age">
+        <br>
+        <input type="text" placeholder="Nationality">
+        <br>
+        <input type="text" placeholder="Local government">
+    </div>
+
+    <div id="parent2">
+        <input type="text" placeholder="username">
+        <br>
+        <input type="text" placeholder="Password">
+    </div>
+</div>
+</body>
+<script>
+
+document.getElementById("parent").style.display = "block";
+document.getElementById("parent2").style.display = "none";
+function sign(){
+    document.getElementById("parent").style.display = "initial";
+    document.getElementById("parent2").style.display = "none";
+}
+function log(){
+    document.getElementById("parent").style.display = "none";
+    document.getElementById("parent2").style.display = "block";
+}
+
+
+    document.getElementById('lorem').style.display = "none"
+    document.getElementById('nother').style.display = "none"
+    function showLorem(){
+        document.getElementById("nother").style.display = "initial";
+        document.getElementById('lorem').style.display = "block";
+        document.getElementById("nother").classList.add("add");
+    }
+    function showAnother(){
+        document.getElementById('lorem').style.display = "block"
+        document.getElementById('another').style.display = "none"
+    }
+</script>
+</html>

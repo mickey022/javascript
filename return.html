@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            margin-top: 20px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <button onclick="decrease()">-</button>
+    <h1 id="show">show</h1>
+    <button onclick="increase()">+</button>
+</div>
+</body>
+<script>
+ let num = 1;
+ let screen = document.getElementById("show");
+ screen.innerHTML = num;
+ function increase(){
+    num++
+    screen.innerHTML = num;
+    
+ }
+ function decrease(){
+     screen.innerHTML = num; 
+     if(num ==1){
+        alert("cannot be less than")
+        return
+     }else{
+        num--
+        screen.innerHTML = num;
+     }
+     }
+
+//   setTimeout(()=>{
+//     alert("Hello World")
+//   }, 5000);
+
+//   setInterval(()=>{
+//     alert("ShopRite Mall")
+//   },3000)
+</script>
+</html>
