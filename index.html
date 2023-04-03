@@ -12,6 +12,7 @@
 
 <input type="text" id="input1">
 <input type="text" id="input2">
+<p id="appear">display</p>
 <button id="myButton" onclick="bott()">click me</button>
 
     <script>
@@ -32,9 +33,11 @@ let value1 = (document.getElementById('input1'));
 let value2 = (document.getElementById('input2'));
 let btn = document.getElementById('myButton');
 
+
      function bott(){
     console.log (Number(value1.value) + Number(value2.value));
       };
+      
     </script>
 
 
@@ -107,20 +110,21 @@ function clickme(){
   let display = document.getElementById('display');
   let cars = ['Lexus', 'Benz', 'Mazda', 'Toyota'];
   display.innerHTML = cars
+  console.log(cars)
 
 function pop(){
   cars.pop();
-  display.innerHTML = cars
+  display.innerHTML = cars;
 }
 function shift(){
   cars.shift();
-  display.innerHTML = cars
+  display.innerHTML = cars;
 }
 
 function unshift(){
   let input = document.getElementById('car');
   cars.unshift(input.value);
-  display.innerHTML = cars
+  display.innerHTML = cars;
 }
 
 function push(){

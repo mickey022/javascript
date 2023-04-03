@@ -10,6 +10,37 @@
             margin-top: 20px;
             margin-left: 200px;
         }
+        .clock{
+            display: flex;
+}
+.hour{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+}
+.min{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+}
+.sec{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+}
+.alarm{
+    display: flex;
+}
+.AlarmClock2{
+    border: 1px solid black;
+    background-color: rgb(14, 90, 233);
+    width: 300px;
+    padding: 20px;
+    margin-left: 400px;
+}
     </style>
 </head>
 <body>
@@ -18,27 +49,215 @@
     <h1 id="show">show</h1>
     <button onclick="increase()">+</button>
 </div>
+
+<div class="AlarmClock2">
+
+<div>
+    <h1>ALARM</h1>
+
+    <div class="clock">
+
+    <h3 id="hour" class="hour"></h3>
+    
+    <h3 id="min" class="min"></h3>
+    
+    <h3 id="sec" class="sec"></h3>
+   </div>
+
+   
+   <h2 id="alarmset">set Alarm</h2>
+
+   <br>
+   <br>
+   <div class="alarm">
+   <p>Hours</p>
+   
+   <select name="" id="alarmHour">
+    <option value="00" selected disabled>00</option>
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+</select>
+
+<p>Minutes</p>
+<select name="" id="alarmMinute">
+    <option value="00" selected disabled >00</option>
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    <option value="32">32</option>
+    <option value="33">33</option>
+    <option value="34">34</option>
+    <option value="35">35</option>
+    <option value="36">36</option>
+    <option value="37">37</option>
+    <option value="38">38</option>
+    <option value="39">39</option>
+    <option value="40">40</option>
+    <option value="41">41</option>
+    <option value="42">42</option>
+    <option value="43">43</option>
+    <option value="44">44</option>
+    <option value="45">45</option>
+    <option value="46">46</option>
+    <option value="47">47</option>
+    <option value="48">48</option>
+    <option value="49">49</option>
+    <option value="50">50</option>
+    <option value="51">51</option>
+    <option value="52">52</option>
+    <option value="53">53</option>
+    <option value="54">54</option>
+    <option value="55">55</option>
+    <option value="56">56</option>
+    <option value="57">57</option>
+    <option value="58">58</option>
+    <option value="59">59</option>
+    <option value="60">60</option>
+</select>
+
+</div>
+<h3 id="alarm">Set Alarm</h3>
+<button onclick="setAlarm()">set Alarm</button>
+<audio src="./Fia-Prod-by-Fresh.mp3" id="audio"></audio>
+</div>
+
+</div>
 </body>
 <script>
- let num = 1;
- let screen = document.getElementById("show");
- screen.innerHTML = num;
- function increase(){
-    num++
-    screen.innerHTML = num;
     
- }
- function decrease(){
-     screen.innerHTML = num; 
-     if(num ==1){
-        alert("cannot be less than")
-        return
-     }else{
-        num--
-        screen.innerHTML = num;
-     }
+    
+    let hour = document.getElementById("hour");
+    let min = document.getElementById("min");
+  let sec = document.getElementById("sec");
+  let alarmHour = document.getElementById("alarmHour");
+  let alarmMinute = document.getElementById("alarmMinute");
+  let display = document.getElementById("alarmset");
+  let audio = document.getElementById("audio")
+
+function time(){ 
+        let date = new Date();
+        hour.innerHTML = date.getHours();
+        min.innerHTML = date.getMinutes();
+        sec.innerHTML = date.getSeconds();
+
+        if (sec.innerHTML < 10) {
+            sec.innerHTML = "0" + sec.innerHTML;
+        }
+        if (min.innerHTML < 10) {
+            min.innerHTML = "0" + min.innerHTML;
+
+        }
+        if (hour.innerHTML < 10) {
+            hour.innerHTML = "0" + hour.innerHTML
+        }
+
+    }
+setInterval(time, 1000)
+
+
+     function setAlarm(){
+      alarmHour.value = alarmHour.value;
+      alarmMinute.value = alarmMinute.value
+      display.innerHTML = ("Alarm set to" + alarmHour.value + ":" + alarmMinute.value);
+
      }
 
+     function alarmTime(){
+        if (hour.innerHTML === alarmHour.value && min.innerHTML === alarmMinute.value) {
+            display.innerHTML = ("Alarm Ring");
+            audio.play()
+        }
+        if (min.innerHTML > alarmMinute.value) {
+           display.innerHTML = ("Alarm Off");
+           audio.pause();
+        }
+       
+     }
+setInterval(alarmTime, 1000)
+
+
+
+
+
+
+
+
+
+    
+
+
+//  let num = 1;
+//  let screen = document.getElementById("show");
+//  screen.innerHTML = num;
+//  function increase(){
+//     num++
+//     screen.innerHTML = num;
+    
+//  }
+//  function decrease(){
+//      screen.innerHTML = num; 
+//      if(num ==1){
+//         alert("cannot be less than")
+//         return
+//      }else{
+//         num--
+//         screen.innerHTML = num;
+//      }
+//      }
+
+// setInterval(()=>{
+// screen.innerHTML = num++
+// },1000)
 //   setTimeout(()=>{
 //     alert("Hello World")
 //   }, 5000);
